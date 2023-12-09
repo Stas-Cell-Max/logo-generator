@@ -1,11 +1,12 @@
-// Importing the 'readline' module for handling user input in the command line
-const readline = require('readline');
 
-// Importing the 'LogoMaker' class from the './lib/logoMaker' module
-const LogoMaker = require('./lib/logoMaker');
+var readline = require('readline'); // Importing the 'readline' module for handling user input in the command line
+
+var LogoMaker = require('./lib/logoMaker'); // Importing the 'LogoMaker' class from the './lib/logoMaker' module
+
+var fs = require('fs');
 
 // Creating a readline interface for reading input and writing output
-const rl = readline.createInterface({
+var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
@@ -23,25 +24,32 @@ function getUserInput(prompt) {
 
 // Asynchronous function to run the logo maker application
 async function runLogoMaker() {
-  // Getting user input for logo text, text color, shape type, and shape color
-  const text = await getUserInput('Enter text (up to three characters): ');
-  const textColor = await getUserInput('Enter text color: ');
-  const shapeType = await getUserInput('Choose a shape (circle, triangle, square): ');
-  const shapeColor = await getUserInput('Enter shape color: ');
+    // Getting user input for logo text, text color, shape type, and shape color
+    var text = await getUserInput('Enter text (up to three characters): ');
+    var textColor = await getUserInput('Enter text color: ');
+    var shapeType = await getUserInput('Choose a shape (circle, triangle, square): ');
+    var shapeColor = await getUserInput('Enter shape color: ');
+  
+    // Creating an instance of the LogoMaker class with user input
+    var logoMaker = new LogoMaker(text, textColor, shapeType, shapeColor);
+  
+    // Generating the SVG logo using the LogoMaker instance
+    // Generating the SVG logo using the LogoMaker instance
+  var svgLogo = logoMaker.generateSVG();
 
-  // Creating an instance of the LogoMaker class with user input
-  const logoMaker = new LogoMaker(text, textColor, shapeType, shapeColor);
+  // Save the SVG logo as an image
+  await logoMaker.saveAsImage();
 
-  // Generating the SVG logo using the LogoMaker instance
-  const svgLogo = logoMaker.generateSVG();
-
-  // Logging the generated SVG logo and a message indicating success
+  // Log the generated SVG logo to the console
   console.log(svgLogo);
-  console.log('Generated logo.svg');
+
+  // Let the user know where the file is saved
+  console.log('Image saved as "logo.png" in the "examples" folder.');
 
   // Closing the readline interface
   rl.close();
 }
+  
 
 // Invoking the runLogoMaker function to start the application
 runLogoMaker();
