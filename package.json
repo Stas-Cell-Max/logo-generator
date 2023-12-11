@@ -1,8 +1,19 @@
 {
-  "devDependencies": {
-    "jest": "^29.7.0"
+  "name": "logo-generator",
+  "version": "1.0.0",
+  "description": "Generate SVG logos based on user input",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
   },
+  "keywords": ["logo", "generator", "SVG"],
+  "author": "Stas M",
+  "license": "MIT",
   "dependencies": {
-    "svg2img": "^1.0.0-beta.2"
+    "inquirer": "^8.1.0", 
+    "svg2img": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0" 
   }
 }
