@@ -13,7 +13,7 @@ The Logo SVG Generator is a Node.js command-line application that allows users t
 - [Walkthrough Video](#walkthrough-video)
 - [Screenshots](#screenshots)
 - [Installation ](#installation)
-- [Tools](#tools)
+- [Tools Used](#tools-used)
 - [Development](#development)
 - [License](#license)
 - [Author](#author)
@@ -49,7 +49,7 @@ As a freelance web developer, I want to generate a simple logo for my projects s
 [GitHub Repository](#https://github.com/Stas-Cell-Max/logo-generator)
 
 ## Walkthrough Video:
-[Watch Video](#video-link)
+[Watch Video](#https://drive.google.com/file/d/1tKIbOJXRxG3YGpt9EtLRJWcLt4qjkU-O/view)
 
 ## Screenshots:
 
@@ -61,8 +61,7 @@ As a freelance web developer, I want to generate a simple logo for my projects s
 4. Open the cloned repository in any source code editor.
 5. Open the integrated terminal for the document and complete the  installation guides provided above. 
 
-## Tools:
-- Saiyan Pride
+## Tools Used:
 - Dynamic JavaScript
 - Node.js v20.10.0
 - Jest 
